@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salary Prediction</title>
+    <link rel="stylesheet" type="text/css" href="style_2.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>Salary Prediction</h1>
+      <form id="predictionForm">
+        나이: <input type="number" id="age" name="Age" /><br />
+        성별:
+        <select id="gender" name="Gender">
+          <option value="Male">남성</option>
+          <option value="Female">여성</option></select
+        ><br />
+        최종 학력:
+        <select id="educationLevel" name="Education Level">
+          <option value="1">고등학교 졸업</option>
+          <option value="2">학사</option>
+          <option value="3">석사</option>
+          <option value="4">박사</option></select
+        ><br />
+        직업 명:
+        <select id="jobTitle" name="Job Title">
+          <option value="Software Engineer">Software Engineer</option>
+          <option value="Full Stack Engineer">Full Stack Engineer</option>
+          <option value="Data Scientist">Data Scientist</option>
+          <option value="Software Engineer Manager">
+            Software Engineer Manager
+          </option>
+          <option value="Data Analyst">Data Analyst</option>
+          <option value="Project Engineer">Project Engineer</option>
+          <option value="Back end Developer">Back end Developer</option>
+          <option value="Front end Developer">Front end Developer</option>
+          <option value="Software Developer">Software Developer</option>
+          <option value="Web Developer">Web Developer</option>
+          <option value="Director of Data Science">
+            Director of Data Science
+          </option></select
+        ><br />
+        경력:
+        <input
+          type="number"
+          id="yearsExperience"
+          name="Years of Experience"
+        /><br />
+        회사 국적:
+        <select id="companyNation" name="Country">
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="China">China</option></select
+        ><br />
+        <button type="button" id="predictButton">예측 해보기!</button>
+      </form>
+      <div id="loading" style="display: none">Loading...</div>
+      <div id="result" style="display: none"></div>
+    </div>
+    <script src="script_2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>🍔 빅맥지수로 연봉예측 해보기! 🍔</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="background-container"></div>
+    <div class="title">
+      <h1 id="title1">🍔 당신의 연봉을 빅맥지수로 예측해 보세요! 🍔</h1>
+    </div>
+    <div class="container" , id="container">
+      <div class="leftColumn" id="leftColumn">
+        <div class="bigMacIndexExplanation" id="bigMacIndexExplanation">
+          <h2>빅맥지수란?</h2>
+            전 세계 맥도날드 빅맥의 가격을 비교하여 각국의 통화 가치를 비교하는 지표로,</br>
+             구매력평가설(ppp)에 기반하여 만들어졌습니다.
+          </p>
+          <p style="font-size: larger; font-weight: bold">
+            미국에서의 연봉이 $50,000일 때 한국에서의 체감 연봉
+          </p>
+          <p>
+            미국 빅맥 지수 = $5.58(미국 빅맥 가격) / $4.17(한국 빅맥 가격) ≈
+            1.34
+          </p>
+          <p>
+            단순 환율로 치환한 원화 연봉 = $50,000 x ₩1,317(달러화 환율) ≈
+            ₩65,850,000
+          </p>
+          <p>
+            한국에서의 체감 연봉 = ₩65,850,000 / 미국 빅맥 지수(1.34) ≈
+            ₩49,141,791
+          </p>
+          <p style="font-size: larger; font-weight: bold">
+            따라서, 미국에서 연봉이 50,000 달러일 때<br />
+            한국에서의 체감 연봉은 49,141,791 원입니다!
+          </p>
+          <p style="font-size: 21px; color: #27d1e4">
+            이제 오른쪽에 원하는 조건을 넣어 본인의 연봉을 예측해 보세요!
+          </p>
+        </div>
+        <div id="salaryChartContainer">
+          <canvas id="experienceSalaryChart"></canvas>
+        </div>
+        <div id="predictedSalaryContainer" style="display: none">
+          <h3>
+            해당 국가의 빅맥지수는 <span id="bicmacDescription"></span> 입니다
+          </h3>
+          <h3>예상 연봉: <span id="predictedSalary"></span> 달러</h3>
+          <h3>빅맥지수 기준 체감 연봉: <span id="pppSalary"></span> 원</h3>
+        </div>
+      </div>
+      <div class="rightColumn" id="rightColumn">
+        <h3 class="title" id="title2">
+          연봉을 알기위해 원하는 조건을 입력해 주세요
+        </h3>
+        <form id="predictionForm">
+          나이: <input type="number" id="age" /><br />
+          성별:
+          <select id="gender">
+            <option value="1">남성</option>
+            <option value="0">여성</option></select
+          ><br />
+          회사 국적:
+          <select id="companyNation">
+            <option value="0">Australia</option>
+            <option value="1">China</option>
+            <option value="2">Canada</option>
+            <option value="3">UK</option>
+            <option value="4">USA</option></select
+          ><br />
+          최종 학력:
+          <select id="educationLevel">
+            <option value="0">고등학교 졸업</option>
+            <option value="1">학사</option>
+            <option value="2">석사</option>
+            <option value="3">박사</option></select
+          ><br />
+          직업 명:
+          <select id="jobTitle">
+            <option value="0">Back end Developer</option>
+            <option value="1">Data Analyst</option>
+            <option value="2">Data Scientist</option>
+            <option value="3">Front end Developer</option>
+            <option value="4">Full Stack Engineer</option>
+            <option value="5">Project Engineer</option>
+            <option value="6">Software Developer</option>
+            <option value="7">Software Engineer</option>
+            <option value="8">Software Engineer Manager</option>
+            <option value="9">Web Developer</option></select
+          ><br />
+          경력: <input type="number" id="yearsExperience" /><br />
+          <button type="button" onclick="predictSalary()">예측 해보기!</button>
+        </form>
+        <div id="userInput"></div>
+      </div>
+    </div>
+
+    <div class="loader" id="loader" style="display: none"></div>
+  </body>
+</html>

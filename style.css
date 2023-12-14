@@ -1,0 +1,172 @@
+body {
+  font-family: "Jua", sans-serif;
+}
+
+.background-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background-image: url("back.png"); 
+  background-size: cover;
+  background-repeat: no-repeat; 
+
+ 
+  backdrop-filter: blur(5px);
+}
+
+
+.background-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* Same blur effect as the background-container */
+  z-index: -2; /* Ensure it's below all content */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  padding: 2%;
+}
+
+h1 {
+  margin-left: 7%;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+h3 {
+  color: black;
+  padding-left: 13%;
+}
+
+.leftColumn {
+  flex: 1;
+  margin-right: 15px;
+}
+.rightColumn {
+  flex: 1;
+  margin-left: 15px;
+}
+#predictedSalaryContainer {
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  margin-right: 40px; 
+  opacity: 0; 
+  transition: opacity 0.7s ease-in-out;
+  padding: 5%; /
+}
+
+#predictionForm {
+  background: #fff;
+  padding: 5%; 
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.bigMacIndexExplanation {
+  text-align: center;
+  height: 52%;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  border-radius: 8px;
+  padding: 10%;
+  margin: 20px auto;
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.bigMacIndexExplanation p {
+  color: black;
+  line-height: 1.6;
+}
+
+.bigMacIndexExplanation h2 {
+  color: black;
+  line-height: 1.6;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px; 
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #7edce6;
+  color: white;
+  padding: 16px 20px; 
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #02ddf5;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.5s linear infinite;
+  margin: 20px auto;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.loader-visible {
+  display: block; 
+  opacity: 1; 
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#salaryChartContainer {
+  margin-left: 60px;
+}
+
+#userInput {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding: 20%;
+}
+
+#bicmacDescription,
+#predictedSalary,
+#pppSalary {
+  color: rgba(255, 99, 132, 0.5);
+  font-size: 1.5em;
+  font-weight: bold;
+}
